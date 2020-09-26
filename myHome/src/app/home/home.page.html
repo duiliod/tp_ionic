@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-icon slot="start" name="home"></ion-icon>
+    <ion-title>
+      Home Sweet Home 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+
+    <ion-item-sliding  *ngFor="let room of rooms" >
+ 
+     <ion-item class=botoncito [routerLink]="['/home',room.id]">
+      {{room.local}}
+     </ion-item>
+ 
+     <ion-item-options class=delete side="end">
+      <!--<button primary>Edit</button>-->
+      <button class=delete (click)="removeItem([room.id])">
+        <ion-icon color="danger" slot="icon-only" name="trash"></ion-icon>
+      </button>
+    </ion-item-options>
+   </ion-item-sliding>
+ 
+   </ion-list>
+   <ion-button class=add [routerLink]="['/add-room']" expand="block" fill="outline" color="safe">
+    new room
+  </ion-button>
+  </ion-content>

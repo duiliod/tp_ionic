@@ -1,0 +1,30 @@
+<ion-header >
+  <ion-toolbar  class=title>
+    <ion-title class=botoncito >{{room.local}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"> </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>{{room.description}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Number of lights: {{room.cantidad}}</ion-label>
+  </ion-item>
+  <!--<ion-item *ngFor="let number of numbers">
+    <ion-label>{{room.estado}}</ion-label>
+  </ion-item>-->
+  <ion-item>
+    <ion-label>State</ion-label>
+    <!-- <ion-input type="boolean" [(ngModel)]="room.estado" name="estado"></ion-input> -->
+    <p *ngIf=" room.estado == '1'" > <ion-icon class=icon2 name="checkmark-outline"></ion-icon>  </p>  
+  </ion-item>
+
+    <button ion-item (click)="showMovementReport()"  [ngStyle]="{'background-color': buttonColor}"> 
+      <ion-icon name="bulb-outline" ></ion-icon>
+    </button>
+    
+</ion-content>

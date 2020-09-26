@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar class=title>
+    <ion-title>New room</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"> </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position='floating'>Name<ion-text color='danger'>*</ion-text></ion-label>
+    <ion-input [(ngModel)]="local" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position='floating'>Description<ion-text color='danger'></ion-text></ion-label>
+    <ion-input [(ngModel)]="description" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position='floating'>Number of lights<ion-text color='danger'>*</ion-text></ion-label>
+    <ion-input [(ngModel)]="cantidad" ></ion-input>
+  </ion-item>
+  
+  <ion-button color="success" (click)="newRoom()" [disabled]="disableButton">
+    <ion-icon slot="icon-only" name="add"></ion-icon>
+  </ion-button>
+</ion-content>
+
+
